@@ -1,4 +1,4 @@
-import { replateSpaceString } from '../helpers/helpers';
+import { replaceSpaceString } from '../helpers/helpers';
 import { IRestaurantCard } from '../libs/types';
 
 const createTagNew = () => {
@@ -8,10 +8,12 @@ const createTagNew = () => {
 };
 
 const createRestaurantCard = (data: IRestaurantCard) => {
+  const dataTitleWithoutSpace = replaceSpaceString(data.desc.title);
+
   const article = document.createElement('article');
-  const anchor = document.createElement('a');
-  anchor.href = '#';
-  anchor.classList.add('restaurants--card');
+  const button = document.createElement('button');
+  button.classList.add('restaurants--card');
+  button.setAttribute('data-restaurant', dataTitleWithoutSpace);
 
   const divCardImg = document.createElement('div');
   divCardImg.classList.add('restaurants--card-img');
@@ -23,7 +25,7 @@ const createRestaurantCard = (data: IRestaurantCard) => {
   img.alt = `restaurant ${data.desc.title}`;
   divCardImg.appendChild(img);
 
-  anchor.append(divCardImg);
+  button.append(divCardImg);
 
   /** Create description card */
   const divDesc = document.createElement('div');
@@ -42,12 +44,12 @@ const createRestaurantCard = (data: IRestaurantCard) => {
   divLikeIcon.classList.add('icon-like');
 
   const label = document.createElement('label');
-  label.htmlFor = `like-${replateSpaceString(data.desc.title)}`;
+  label.htmlFor = `like-${dataTitleWithoutSpace}`;
 
   const input = document.createElement('input');
   input.type = 'checkbox';
-  input.name = `like-${replateSpaceString(data.desc.title)}`;
-  input.id = `like-${replateSpaceString(data.desc.title)}`;
+  input.name = `like-${dataTitleWithoutSpace}`;
+  input.id = `like-${dataTitleWithoutSpace}`;
 
   const iSolid = document.createElement('i');
   iSolid.classList.add('fa-solid', 'fa-heart', 'icon-solid');
@@ -60,9 +62,9 @@ const createRestaurantCard = (data: IRestaurantCard) => {
 
   divDesc.append(divDescText, divLikeIcon);
 
-  anchor.append(divCardImg, divDesc);
+  button.append(divCardImg, divDesc);
 
-  article.append(anchor);
+  article.append(button);
   return article;
 };
 

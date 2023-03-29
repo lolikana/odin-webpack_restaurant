@@ -175,6 +175,7 @@
   &-img {
     height: 80%;
     overflow: hidden;
+    width: 100%;
 
     img {
       height: 100%;
@@ -187,6 +188,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 
     &-text {
       h2,
