@@ -1,0 +1,1 @@
+{"version":3,"file":"main.css","mappings":"AAEA,GACC,SAHO,C","sources":["webpack://webpack/./src/sass/style.scss"],"sourcesContent":["$__red: red;\n\nh1 {\n\tcolor: $__red;\n}"],"names":[],"sourceRoot":""}
