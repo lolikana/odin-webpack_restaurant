@@ -1,5 +1,12 @@
-$__red: red;
+@import 'fontawesome/fontawesome.scss';
+@import 'fontawesome/solid.scss';
 
-h1 {
-	color: $__red;
-}
+/** Utils **/
+@import 'utils/mixins';
+
+/** Base **/
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/color';
+
+@import 'base';

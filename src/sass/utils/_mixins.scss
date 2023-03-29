@@ -1,0 +1,60 @@
+$breakpoints: (
+  mobile: 420px,
+  tablet: 768px,
+  laptop: 1024px,
+  desktop: 1280px,
+  custom700: 700px,
+  custom900: 900px,
+  custom1400: 1400px,
+  custom1600: 1600px
+);
+
+@mixin mq($breakpoint) {
+  @media only screen and (width >= #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}
+
+@mixin box-shadow(
+  $__inset: null,
+  $__horizontaloffset: 10px,
+  $__verticaloffset: 10px,
+  $blur: 10px,
+  $__spread: -8px,
+  $__color: rgba(0, 0, 0, 0.3)
+) {
+  -webkit-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread
+    $__color;
+  -moz-box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+  box-shadow: $__inset $__horizontaloffset $__verticaloffset $blur $__spread $__color;
+}
+
+@mixin bgi-linear-gradient($bgColor1: $__secondary, $bgColor2: $__primary) {
+  background-image: linear-gradient($bgColor1, $bgColor2);
+}
+@mixin bg-linear-gradient($bgColor1: $__secondary, $bgColor2: $__primary) {
+  background: linear-gradient($bgColor1, $bgColor2);
+}
+
+@mixin PrimaryColor-opacity($__opacity: 0.1) {
+  background-color: rgba(147, 86, 220, $__opacity);
+}
+
+%card-shadow {
+  @include box-shadow();
+  cursor: pointer;
+}
+%card-radius {
+  border-radius: 15px;
+}
+%card-shadow-radius-hover {
+  @extend %card-shadow;
+  @extend %card-radius;
+
+  transition: all 250ms ease;
+  &:hover {
+    transition: all 250ms ease;
+    transform: scale(1.005);
+    @include box-shadow($__spread: -5px);
+  }
+}

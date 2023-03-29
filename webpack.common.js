@@ -8,7 +8,7 @@ const DotenvWebpackPlugin = require('dotenv-webpack');
 
 module.exports = {
   entry: {
-    main: path.resolve(__dirname, 'src/index.ts')
+    main: path.resolve(__dirname, './src/index.ts')
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -20,7 +20,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'TOP - Webpack Project',
       filename: 'index.html',
-      template: 'src/index.html'
+      template: './src/index.html'
     }),
     new MiniCssExtractPlugin(),
     new DotenvWebpackPlugin({
@@ -52,6 +52,10 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource'
+      },
+      {
+        test: /\.(svg|eot|woff|woff2|ttf)$/,
+        use: ['file-loader']
       }
     ]
   },
