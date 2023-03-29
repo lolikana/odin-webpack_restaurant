@@ -14,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "lint-staged": {
-    "./**/*.ts": [
+    "./**/*.{ts,js}": [
       "prettier --write",
       "eslint --fix -f table"
     ],

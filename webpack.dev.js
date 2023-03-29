@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import path from 'path';
-import common from 'webpack.common.js';
-import { merge } from 'webpack-merge';
+/* eslint-disable @typescript-eslint/no-var-requires */
+const path = require('path');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
   mode: 'development',
