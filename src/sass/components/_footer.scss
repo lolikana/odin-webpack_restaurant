@@ -1,0 +1,57 @@
+.footer {
+  height: fit-content;
+  color: white;
+  padding: 1.5rem 1.5rem 2rem;
+  background-color: $__grey900;
+
+  &--logo {
+    filter: brightness(0) invert(1);
+    width: fit-content;
+    height: 1.15rem;
+  }
+  &--links {
+    margin-top: 1rem;
+  }
+  &--link {
+    line-height: 1.75rem;
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    &:nth-child(1)::before,
+    &:nth-child(2)::before {
+      margin-right: 0.75rem;
+    }
+    &:nth-child(1)::before {
+      content: fa-content($fa-var-utensils);
+    }
+    &:nth-child(2)::before {
+      content: fa-content($fa-var-handshake-angle);
+    }
+  }
+  @include mq(tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    &--links {
+      display: flex;
+      gap: 2rem;
+      margin-top: 0;
+    }
+
+    &--link {
+      &::before {
+        vertical-align: baseline;
+      }
+      &:nth-child(1)::before {
+        margin-right: 0.3rem;
+      }
+      &:nth-child(2)::before {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
