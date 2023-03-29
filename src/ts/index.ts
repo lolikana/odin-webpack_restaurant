@@ -1,4 +1,6 @@
-import { IHowtoListData } from '../libs/types';
+import createRestaurantCard from './components/restaurantCard';
+import { dummyRestaurantData } from './libs/datas';
+import { IHowtoListData } from './libs/types';
 
 const main = document.getElementById('main') as HTMLElement;
 
@@ -72,6 +74,24 @@ const createSectionHowto = () => {
   return section;
 };
 
+const createSectionRestaurants = () => {
+  const section = document.createElement('section');
+  section.classList.add('section', 'section--restaurants');
+
+  const h1 = document.createElement('h1');
+  h1.textContent = 'Restaurants';
+
+  const divRestaurantsCard = document.createElement('div');
+  divRestaurantsCard.classList.add('restaurants--cards');
+
+  dummyRestaurantData.map(restaurant =>
+    divRestaurantsCard.append(createRestaurantCard(restaurant))
+  );
+
+  section.append(h1, divRestaurantsCard);
+  return section;
+};
+
 export const createHomepage = () => {
-  main.append(createSectionExplore(), createSectionHowto());
+  main.append(createSectionExplore(), createSectionHowto(), createSectionRestaurants());
 };
