@@ -1,0 +1,26 @@
+.btn-main {
+  width: fit-content;
+  position: relative;
+  bottom: 0;
+
+  padding: 1rem;
+  border-radius: 50px;
+
+  color: #fff;
+  font-weight: $__medium;
+
+  @include bg-linear-gradient;
+  @include box-shadow;
+  transition: all 150ms ease-in;
+
+  &:hover {
+    transition: all 150ms ease-out;
+    opacity: 0.95;
+    bottom: 0.05rem;
+    @include box-shadow($blur: 20px);
+  }
+}
+
+.btn-order {
+  padding: 1rem 3rem;
+}

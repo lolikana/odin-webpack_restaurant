@@ -1,3 +1,5 @@
 import './sass/style.scss';
 
-console.log('hello world');
+import { createHomepage } from './ts';
+
+createHomepage();

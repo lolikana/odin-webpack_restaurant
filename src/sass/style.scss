@@ -14,3 +14,11 @@
 /** Components **/
 @import 'components/header';
 @import 'components/footer';
+
+/** Components - UI **/
+@import 'components/ui/spinner';
+@import 'components/ui/button';
+@import 'components/ui/icon';
+
+/** Pages **/
+@import 'pages/homepage';

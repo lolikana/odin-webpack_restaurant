@@ -1,0 +1,39 @@
+.icon-like {
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    input {
+      display: none;
+    }
+    i {
+      position: absolute;
+      left: -1.5rem;
+    }
+    .icon-solid::before,
+    .icon-regular::before {
+      width: 100%;
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #000;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .icon-solid::before {
+      background-size: contain;
+      transition: all 500ms ease;
+      @include bgi-linear-gradient();
+      opacity: 0;
+    }
+  }
+
+  input:checked + .icon-solid::before {
+    transition: opacity 500ms ease;
+    opacity: 1;
+  }
+}
