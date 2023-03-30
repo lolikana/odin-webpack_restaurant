@@ -8,6 +8,6 @@ module.exports = merge(common, {
   devtool: 'source-map',
   optimization: {
     runtimeChunk: 'single',
-    minimize: false
+    minimize: true
   }
 });

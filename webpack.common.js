@@ -12,19 +12,20 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name][contenthash].js',
+    filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'TOP - Webpack Project',
+      title: 'title',
       filename: 'index.html',
       template: './src/index.html'
     }),
     new MiniCssExtractPlugin(),
     new DotenvWebpackPlugin({
       path: './.env',
+      // Set safe to true to load .env.example (if it exists) to verify the variables you're using in the project.
       safe: true
     })
   ],
@@ -53,15 +54,24 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[hash][ext][query]'
+          filename: 'assets/images/[hash].[ext][query]'
+        }
+      },
+      {
+        test: /\.(ttf|woff2|woff|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name].[hash].[ext][query]'
         }
       }
     ]
   },
   resolve: {
+    // Specifies which extensions can be imported without specifying the extension in the import statement
     extensions: ['.tsx', '.ts', '.js']
   },
   stats: {
+    // Display detailed error messages in the console output
     errorDetails: true
   }
 };

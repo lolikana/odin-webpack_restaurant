@@ -10,13 +10,18 @@ module.exports = merge(common, {
     static: {
       directory: path.resolve(__dirname, 'dist')
     },
+    // hot module replacement (HMR) so that changes to the code are reflected without requiring a full page refresh.
     hot: true,
     open: true,
     port: 4000,
-    compress: true,
-    historyApiFallback: true
+    // Enables gzip compression for assets served by the dev server, which can improve performance by reducing the size of the files that are sent over the network.
+    compress: true
+    // Redirects all 404 errors to the index.html file, which is useful when using client-side routing with frameworks like React Router.
+    // historyApiFallback: true
   },
   optimization: {
-    runtimeChunk: 'single'
+    // creates a separate chunk for the runtime code, which can improve caching and reduce the size of the main bundle.
+    runtimeChunk: 'single',
+    minimize: true
   }
 });
