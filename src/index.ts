@@ -1,27 +1,38 @@
 import './sass/style.scss';
 
-import { dummyRestaurantData, dummyRestaurantMenuData } from './ts/libs/datas';
-import { createHomepage } from './ts/pages/homepage';
-import { createMenuPage } from './ts/pages/menu';
+import { IRestaurantCard, IRestaurantMenu } from './ts/libs/types';
+import {
+  createSectionExplore,
+  createSectionHowto,
+  createSectionRestaurants
+} from './ts/pages/homepage';
+import { createSectionMenu, createTopPage } from './ts/pages/menu';
+
+const main = document.getElementById('main') as HTMLElement;
+const backHomeBtn = document.querySelector('.header--backhome') as HTMLButtonElement;
+
+const createHomepage = () => {
+  main.append(createSectionExplore(), createSectionHowto(), createSectionRestaurants());
+};
 
 createHomepage();
 
-const restaurantsCards = document.querySelector('.restaurants--cards') as HTMLElement;
+export const createMenuPage = (
+  dataRestaurant: IRestaurantCard,
+  dataMenu: IRestaurantMenu
+) => {
+  main.textContent = '';
+  main.classList.add('main--menu');
 
-restaurantsCards.addEventListener('click', (e: MouseEvent) => {
-  const target = e.target as HTMLElement;
-  const clicked = target.closest('.restaurants--card') as HTMLButtonElement;
+  backHomeBtn.style.display = 'block';
 
-  if (!clicked) return;
+  main.append(createTopPage(dataRestaurant), createSectionMenu(dataMenu));
+};
 
-  const selectedRestaurant = clicked.dataset.restaurant;
+backHomeBtn?.addEventListener('click', () => {
+  main.textContent = '';
+  main.classList.remove('main--menu');
 
-  const dataRestaurant = dummyRestaurantData.filter(
-    restaurant => restaurant.desc.title === selectedRestaurant
-  )[0];
-  const dataMenu = dummyRestaurantMenuData.filter(
-    restaurant => restaurant.restaurant === selectedRestaurant
-  )[0];
-
-  createMenuPage(dataRestaurant, dataMenu);
+  backHomeBtn.style.display = 'none';
+  createHomepage();
 });

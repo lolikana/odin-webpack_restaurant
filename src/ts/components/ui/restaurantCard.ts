@@ -1,5 +1,5 @@
 import { IRestaurantCard } from '../../libs/types';
-import createDivIconLike from './iconLike';
+import createDivIconLike from '../buttons/iconLike';
 
 const createTagNew = () => {
   const div = document.createElement('div');

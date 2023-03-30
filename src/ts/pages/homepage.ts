@@ -1,10 +1,28 @@
+import { createMenuPage } from '../..';
 import createRestaurantCard from '../components/ui/restaurantCard';
-import { dummyRestaurantData } from '../libs/datas';
+import { dummyRestaurantData, dummyRestaurantMenuData } from '../libs/datas';
 import { IHowtoListData } from '../libs/types';
 
-const main = document.getElementById('main') as HTMLElement;
+const createMenuListener = (e: MouseEvent) => {
+  const target = e.target as HTMLElement;
+  const clicked = target.closest('.restaurants--card') as HTMLButtonElement;
+  console.log(clicked);
+  if (!clicked) return;
 
-const createSectionExplore = () => {
+  const selectedRestaurant = clicked.dataset.restaurant;
+
+  const dataRestaurant = dummyRestaurantData.filter(
+    restaurant => restaurant.desc.title === selectedRestaurant
+  )[0];
+
+  const dataMenu = dummyRestaurantMenuData.filter(
+    restaurant => restaurant.restaurant === selectedRestaurant
+  )[0];
+
+  createMenuPage(dataRestaurant, dataMenu);
+};
+
+export const createSectionExplore = () => {
   const section = document.createElement('section');
   section.classList.add('section', 'section--explore');
 
@@ -59,7 +77,7 @@ const createHowtoList = (data: IHowtoListData) => {
   return li;
 };
 
-const createSectionHowto = () => {
+export const createSectionHowto = () => {
   const section = document.createElement('section');
   section.classList.add('section', 'section--howto');
 
@@ -74,7 +92,7 @@ const createSectionHowto = () => {
   return section;
 };
 
-const createSectionRestaurants = () => {
+export const createSectionRestaurants = () => {
   const section = document.createElement('section');
   section.classList.add('section', 'section--restaurants');
 
@@ -83,6 +101,7 @@ const createSectionRestaurants = () => {
 
   const divRestaurantsCard = document.createElement('div');
   divRestaurantsCard.classList.add('restaurants--cards');
+  divRestaurantsCard.addEventListener('click', (e: MouseEvent) => createMenuListener(e));
 
   dummyRestaurantData.map(restaurant =>
     divRestaurantsCard.append(createRestaurantCard(restaurant))
@@ -90,8 +109,4 @@ const createSectionRestaurants = () => {
 
   section.append(h1, divRestaurantsCard);
   return section;
-};
-
-export const createHomepage = () => {
-  main.append(createSectionExplore(), createSectionHowto(), createSectionRestaurants());
 };
