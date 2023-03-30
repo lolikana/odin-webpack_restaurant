@@ -9,8 +9,6 @@ Design based on another project I did: <a href="https://github.com/lolikana/ocr-
 ## Table of Contents
 
 - [Webpack Restaurant](#webpack-restaurant)
-	- [The Odin Project : Full Stack JS - JAVASCRIPT Course](#the-odin-project--full-stack-js---javascript-course)
-	- [Table of Contents](#table-of-contents)
 	- [Technologies](#technologies)
 	- [Installation and Usage](#installation-and-usage)
 	- [Features](#features)
