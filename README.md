@@ -8,9 +8,9 @@ Design based on another project I did: <a href="https://github.com/lolikana/ocr-
 
 ## Table of Contents
 
-	- [Technologies](#technologies)
-	- [Installation and Usage](#installation-and-usage)
-	- [Features](#features)
+- [Technologies](#technologies)
+- [Installation and Usage](#installation-and-usage)
+- [Features](#features)
 
 ## Technologies
 
