@@ -11,16 +11,18 @@ export interface IRestaurantCard {
   };
 }
 
-interface IMenu {
+export interface IMenuDishes {
   name: string;
   desc: string;
   price: number;
 }
+
+export interface IMenu {
+  course: 'starters' | 'mains' | 'desserts';
+  dishes: IMenuDishes[];
+}
+
 export interface IRestaurantMenu {
   restaurant: string;
-  menu: {
-    starters: IMenu[];
-    mains: IMenu[];
-    desserts: IMenu[];
-  };
+  menu: IMenu[];
 }

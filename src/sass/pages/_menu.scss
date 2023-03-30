@@ -1,0 +1,215 @@
+.header {
+  justify-content: center;
+  &--backhome {
+    position: absolute;
+    left: 2rem;
+
+    @include mq(custom1600) {
+      left: calc(50% - 800px + 2rem);
+    }
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.main--menu {
+  padding: 0;
+}
+
+.section--menu {
+  padding: 0 1rem;
+  margin: 0;
+  height: 100%;
+}
+
+.menu--top {
+  position: relative;
+  width: 100%;
+  margin-bottom: -3rem;
+  overflow: hidden;
+  img {
+    max-height: 400px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.section--menu {
+  position: relative;
+  height: 100%;
+  padding-top: 3rem;
+  background-color: #fff;
+  border-radius: 30px 30px 0 0;
+
+  .menu {
+    &--name {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+    &--carte {
+      margin: 0 auto;
+      max-width: 600px;
+      @include mq(desktop) {
+        display: flex;
+        justify-content: center;
+        gap: calc(1rem + (4 - 1) * ((100vw - 1280px) / (1600 - 1280)));
+        max-width: 100%;
+      }
+
+      article {
+        /** Categories title **/
+        h2 {
+          text-transform: uppercase;
+          font-weight: $__light;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 55px;
+            height: 4px;
+            background-color: $__tertiary;
+          }
+        }
+        /** "Mains" title **/
+        &:nth-of-type(2) {
+          h2 {
+            margin-left: 2rem;
+            @include mq(desktop) {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu--cards {
+  margin: 2rem 0 3rem;
+
+  .menu--card {
+    @extend %card-shadow;
+    @extend %card-radius;
+
+    margin-bottom: 1rem;
+    overflow: hidden;
+
+    @include mq(desktop) {
+      width: 400px;
+    }
+  }
+  .menu--card-label {
+    display: flex;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    input {
+      display: none;
+    }
+  }
+  .menu--card-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .desc--text {
+      overflow: hidden;
+      &-title,
+      &-subTitle {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      &-title {
+        margin-bottom: 0.5rem;
+      }
+    }
+    .desc--price {
+      align-self: flex-end;
+      font-weight: $__medium;
+      margin-left: 1rem;
+    }
+  }
+}
+
+/** Checkbox  menu  START **/
+.menu--card-check {
+  background-color: $__tertiary;
+  width: 0rem;
+  margin: -0.5rem -1rem -0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i::before {
+    color: #fff;
+    width: 1.5rem;
+    font-size: 1.5rem;
+    transform: rotate(360deg);
+  }
+}
+
+.menu--card-desc,
+.menu--card-check,
+i::before {
+  transition: all 500ms ease;
+}
+
+.menu--card-label input:checked {
+  + .menu--card-desc,
+  ~ .menu--card-check,
+  i::before {
+    transition: all 500ms ease;
+  }
+  + .menu--card-desc {
+    width: calc(100% - 4rem);
+  }
+  ~ .menu--card-check {
+    width: 4rem;
+    i::before {
+      transform: rotate(0deg);
+    }
+  }
+}
+/** Checkbox  menu  END **/
+
+.menu--order-btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.menu-cards {
+  overflow: hidden;
+}
+.menu--card {
+  opacity: 0;
+  animation: menu-fade-in 1s ease-in-out forwards;
+  &:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.9s;
+  }
+}
+
+@keyframes menu-fade-in {
+  0% {
+    transform: translateY(8%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

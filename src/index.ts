@@ -1,7 +1,8 @@
 import './sass/style.scss';
 
-import { createHomepage } from './ts';
-import { dummyRestaurantMenuData } from './ts/libs/datas';
+import { dummyRestaurantData, dummyRestaurantMenuData } from './ts/libs/datas';
+import { createHomepage } from './ts/pages/homepage';
+import { createMenuPage } from './ts/pages/menu';
 
 createHomepage();
 
@@ -15,8 +16,12 @@ restaurantsCards.addEventListener('click', (e: MouseEvent) => {
 
   const selectedRestaurant = clicked.dataset.restaurant;
 
-  const data = dummyRestaurantMenuData.filter(
+  const dataRestaurant = dummyRestaurantData.filter(
+    restaurant => restaurant.desc.title === selectedRestaurant
+  )[0];
+  const dataMenu = dummyRestaurantMenuData.filter(
     restaurant => restaurant.restaurant === selectedRestaurant
-  );
-  console.log(data);
+  )[0];
+
+  createMenuPage(dataRestaurant, dataMenu);
 });

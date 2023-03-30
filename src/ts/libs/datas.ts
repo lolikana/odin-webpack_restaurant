@@ -42,226 +42,262 @@ export const dummyRestaurantData: IRestaurantCard[] = [
 export const dummyRestaurantMenuData: IRestaurantMenu[] = [
   {
     restaurant: 'La Palette du gout',
-    menu: {
-      starters: [
-        {
-          name: "Fricassée d'escargot",
-          desc: "Au piment d'Espelette",
-          price: 25
-        },
-        {
-          name: 'Foie gras de canard mi-cuit',
-          desc: 'Et ses copeaux de truffe noire',
-          price: 35
-        },
-        {
-          name: 'Œuf au plat',
-          desc: 'Assaisonné à la truffe sur lit de caviar',
-          price: 20
-        }
-      ],
-      mains: [
-        {
-          name: 'Filet de boeuf aux herbes',
-          desc: 'Accompagné de sa ribambelle de légumes',
-          price: 40
-        },
-        {
-          name: 'Parmentier de queue de boeuf',
-          desc: 'À la truffe noire sur sa purée de panais',
-          price: 35
-        },
-        {
-          name: 'Filet de turbot',
-          desc: 'Aux agrumes',
-          price: 44
-        }
-      ],
-      desserts: [
-        {
-          name: 'Paris-Brest',
-          desc: 'Revisité',
-          price: 18
-        },
-        {
-          name: "Macaron au chocolat d'exception",
-          desc: 'Et glace à la vanille de Madagascar',
-          price: 22
-        },
-        {
-          name: 'Mousse au chocolat',
-          desc: "Au piment d'Espelette et à la truffe noire",
-          price: 23
-        }
-      ]
-    }
+    menu: [
+      {
+        course: 'starters',
+        dishes: [
+          {
+            name: "Fricassée d'escargot",
+            desc: "Au piment d'Espelette",
+            price: 25
+          },
+          {
+            name: 'Foie gras de canard mi-cuit',
+            desc: 'Et ses copeaux de truffe noire',
+            price: 35
+          },
+          {
+            name: 'Œuf au plat',
+            desc: 'Assaisonné à la truffe sur lit de caviar',
+            price: 20
+          }
+        ]
+      },
+      {
+        course: 'mains',
+        dishes: [
+          {
+            name: 'Filet de boeuf aux herbes',
+            desc: 'Accompagné de sa ribambelle de légumes',
+            price: 40
+          },
+          {
+            name: 'Parmentier de queue de boeuf',
+            desc: 'À la truffe noire sur sa purée de panais',
+            price: 35
+          },
+          {
+            name: 'Filet de turbot',
+            desc: 'Aux agrumes',
+            price: 44
+          }
+        ]
+      },
+      {
+        course: 'desserts',
+        dishes: [
+          {
+            name: 'Paris-Brest',
+            desc: 'Revisité',
+            price: 18
+          },
+          {
+            name: "Macaron au chocolat d'exception",
+            desc: 'Et glace à la vanille de Madagascar',
+            price: 22
+          },
+          {
+            name: 'Mousse au chocolat',
+            desc: "Au piment d'Espelette et à la truffe noire",
+            price: 23
+          }
+        ]
+      }
+    ]
   },
   {
     restaurant: 'La note enchantee',
-    menu: {
-      starters: [
-        {
-          name: "Fricassée d'escargot",
-          desc: "Au piment d'Espelette",
-          price: 25
-        },
-        {
-          name: 'Foie gras de canard mi-cuit',
-          desc: 'Et ses copeaux de truffe noire',
-          price: 35
-        },
-        {
-          name: 'Œuf au plat',
-          desc: 'Assaisonné à la truffe sur lit de caviar',
-          price: 20
-        }
-      ],
-      mains: [
-        {
-          name: 'Filet de boeuf aux herbes',
-          desc: 'Accompagné de sa ribambelle de légumes',
-          price: 40
-        },
-        {
-          name: 'Parmentier de queue de boeuf',
-          desc: 'À la truffe noire sur sa purée de panais',
-          price: 35
-        },
-        {
-          name: 'Filet de turbot',
-          desc: 'Aux agrumes',
-          price: 44
-        }
-      ],
-      desserts: [
-        {
-          name: 'Paris-Brest',
-          desc: 'Revisité',
-          price: 18
-        },
-        {
-          name: "Macaron au chocolat d'exception",
-          desc: 'Et glace à la vanille de Madagascar',
-          price: 22
-        },
-        {
-          name: 'Mousse au chocolat',
-          desc: "Au piment d'Espelette et à la truffe noire",
-          price: 23
-        }
-      ]
-    }
+    menu: [
+      {
+        course: 'starters',
+        dishes: [
+          {
+            name: "Fricassée d'escargot",
+            desc: "Au piment d'Espelette",
+            price: 25
+          },
+          {
+            name: 'Foie gras de canard mi-cuit',
+            desc: 'Et ses copeaux de truffe noire',
+            price: 35
+          },
+          {
+            name: 'Œuf au plat',
+            desc: 'Assaisonné à la truffe sur lit de caviar',
+            price: 20
+          }
+        ]
+      },
+      {
+        course: 'mains',
+        dishes: [
+          {
+            name: 'Filet de boeuf aux herbes',
+            desc: 'Accompagné de sa ribambelle de légumes',
+            price: 40
+          },
+          {
+            name: 'Parmentier de queue de boeuf',
+            desc: 'À la truffe noire sur sa purée de panais',
+            price: 35
+          },
+          {
+            name: 'Filet de turbot',
+            desc: 'Aux agrumes',
+            price: 44
+          }
+        ]
+      },
+      {
+        course: 'desserts',
+        dishes: [
+          {
+            name: 'Paris-Brest',
+            desc: 'Revisité',
+            price: 18
+          },
+          {
+            name: "Macaron au chocolat d'exception",
+            desc: 'Et glace à la vanille de Madagascar',
+            price: 22
+          },
+          {
+            name: 'Mousse au chocolat',
+            desc: "Au piment d'Espelette et à la truffe noire",
+            price: 23
+          }
+        ]
+      }
+    ]
   },
   {
     restaurant: 'A la francaise',
-    menu: {
-      starters: [
-        {
-          name: "Fricassée d'escargot",
-          desc: "Au piment d'Espelette",
-          price: 25
-        },
-        {
-          name: 'Foie gras de canard mi-cuit',
-          desc: 'Et ses copeaux de truffe noire',
-          price: 35
-        },
-        {
-          name: 'Œuf au plat',
-          desc: 'Assaisonné à la truffe sur lit de caviar',
-          price: 20
-        }
-      ],
-      mains: [
-        {
-          name: 'Filet de boeuf aux herbes',
-          desc: 'Accompagné de sa ribambelle de légumes',
-          price: 40
-        },
-        {
-          name: 'Parmentier de queue de boeuf',
-          desc: 'À la truffe noire sur sa purée de panais',
-          price: 35
-        },
-        {
-          name: 'Filet de turbot',
-          desc: 'Aux agrumes',
-          price: 44
-        }
-      ],
-      desserts: [
-        {
-          name: 'Paris-Brest',
-          desc: 'Revisité',
-          price: 18
-        },
-        {
-          name: "Macaron au chocolat d'exception",
-          desc: 'Et glace à la vanille de Madagascar',
-          price: 22
-        },
-        {
-          name: 'Mousse au chocolat',
-          desc: "Au piment d'Espelette et à la truffe noire",
-          price: 23
-        }
-      ]
-    }
+    menu: [
+      {
+        course: 'starters',
+        dishes: [
+          {
+            name: "Fricassée d'escargot",
+            desc: "Au piment d'Espelette",
+            price: 25
+          },
+          {
+            name: 'Foie gras de canard mi-cuit',
+            desc: 'Et ses copeaux de truffe noire',
+            price: 35
+          },
+          {
+            name: 'Œuf au plat',
+            desc: 'Assaisonné à la truffe sur lit de caviar',
+            price: 20
+          }
+        ]
+      },
+      {
+        course: 'mains',
+        dishes: [
+          {
+            name: 'Filet de boeuf aux herbes',
+            desc: 'Accompagné de sa ribambelle de légumes',
+            price: 40
+          },
+          {
+            name: 'Parmentier de queue de boeuf',
+            desc: 'À la truffe noire sur sa purée de panais',
+            price: 35
+          },
+          {
+            name: 'Filet de turbot',
+            desc: 'Aux agrumes',
+            price: 44
+          }
+        ]
+      },
+      {
+        course: 'desserts',
+        dishes: [
+          {
+            name: 'Paris-Brest',
+            desc: 'Revisité',
+            price: 18
+          },
+          {
+            name: "Macaron au chocolat d'exception",
+            desc: 'Et glace à la vanille de Madagascar',
+            price: 22
+          },
+          {
+            name: 'Mousse au chocolat',
+            desc: "Au piment d'Espelette et à la truffe noire",
+            price: 23
+          }
+        ]
+      }
+    ]
   },
   {
     restaurant: 'Les delices des sens',
-    menu: {
-      starters: [
-        {
-          name: "Fricassée d'escargot",
-          desc: "Au piment d'Espelette",
-          price: 25
-        },
-        {
-          name: 'Foie gras de canard mi-cuit',
-          desc: 'Et ses copeaux de truffe noire',
-          price: 35
-        },
-        {
-          name: 'Œuf au plat',
-          desc: 'Assaisonné à la truffe sur lit de caviar',
-          price: 20
-        }
-      ],
-      mains: [
-        {
-          name: 'Filet de boeuf aux herbes',
-          desc: 'Accompagné de sa ribambelle de légumes',
-          price: 40
-        },
-        {
-          name: 'Parmentier de queue de boeuf',
-          desc: 'À la truffe noire sur sa purée de panais',
-          price: 35
-        },
-        {
-          name: 'Filet de turbot',
-          desc: 'Aux agrumes',
-          price: 44
-        }
-      ],
-      desserts: [
-        {
-          name: 'Paris-Brest',
-          desc: 'Revisité',
-          price: 18
-        },
-        {
-          name: "Macaron au chocolat d'exception",
-          desc: 'Et glace à la vanille de Madagascar',
-          price: 22
-        },
-        {
-          name: 'Mousse au chocolat',
-          desc: "Au piment d'Espelette et à la truffe noire",
-          price: 23
-        }
-      ]
-    }
+    menu: [
+      {
+        course: 'starters',
+        dishes: [
+          {
+            name: "Fricassée d'escargot",
+            desc: "Au piment d'Espelette",
+            price: 25
+          },
+          {
+            name: 'Foie gras de canard mi-cuit',
+            desc: 'Et ses copeaux de truffe noire',
+            price: 35
+          },
+          {
+            name: 'Œuf au plat',
+            desc: 'Assaisonné à la truffe sur lit de caviar',
+            price: 20
+          }
+        ]
+      },
+      {
+        course: 'mains',
+        dishes: [
+          {
+            name: 'Filet de boeuf aux herbes',
+            desc: 'Accompagné de sa ribambelle de légumes',
+            price: 40
+          },
+          {
+            name: 'Parmentier de queue de boeuf',
+            desc: 'À la truffe noire sur sa purée de panais',
+            price: 35
+          },
+          {
+            name: 'Filet de turbot',
+            desc: 'Aux agrumes',
+            price: 44
+          }
+        ]
+      },
+      {
+        course: 'desserts',
+        dishes: [
+          {
+            name: 'Paris-Brest',
+            desc: 'Revisité',
+            price: 18
+          },
+          {
+            name: "Macaron au chocolat d'exception",
+            desc: 'Et glace à la vanille de Madagascar',
+            price: 22
+          },
+          {
+            name: 'Mousse au chocolat',
+            desc: "Au piment d'Espelette et à la truffe noire",
+            price: 23
+          }
+        ]
+      }
+    ]
   }
 ];

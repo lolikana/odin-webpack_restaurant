@@ -1,6 +1,6 @@
-import createRestaurantCard from './components/restaurantCard';
-import { dummyRestaurantData } from './libs/datas';
-import { IHowtoListData } from './libs/types';
+import createRestaurantCard from '../components/ui/restaurantCard';
+import { dummyRestaurantData } from '../libs/datas';
+import { IHowtoListData } from '../libs/types';
 
 const main = document.getElementById('main') as HTMLElement;
 
