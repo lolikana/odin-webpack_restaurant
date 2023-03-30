@@ -13,7 +13,7 @@ const createRestaurantCard = (data: IRestaurantCard) => {
   const article = document.createElement('article');
   const button = document.createElement('button');
   button.classList.add('restaurants--card');
-  button.setAttribute('data-restaurant', dataTitleWithoutSpace);
+  button.setAttribute('data-restaurant', data.desc.title);
 
   const divCardImg = document.createElement('div');
   divCardImg.classList.add('restaurants--card-img');
